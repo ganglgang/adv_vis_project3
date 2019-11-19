@@ -1,7 +1,7 @@
 
 
 function powerInfo(id){
-    d3.csv("../Data/ActiveLoad.csv", function(data) {
+    d3.csv("Data/ActiveLoad.csv", function(data) {
         result = data.filter(function(d){
             return d.nodes==id;
         });
@@ -16,7 +16,7 @@ function powerInfo(id){
         activeLoad_plot(data);
     });
 
-    d3.csv("../Data/Voltage.csv", function(data) {
+    d3.csv("Data/Voltage.csv", function(data) {
         result = data.filter(function(d){
             return d.nodes==id;
         });
@@ -35,7 +35,7 @@ function powerInfo(id){
 }
 
 function busInfo(id){
-    d3.csv("../Data/BEBenergy.csv", function(data) {
+    d3.csv("Data/BEBenergy.csv", function(data) {
         result = data.filter(function(d){
             return d.bus=='BEB'+id;
         });
@@ -50,7 +50,7 @@ function busInfo(id){
         BEBenergy_plot(data_energy);
     });
 
-    d3.csv("../Data/BEBpower.csv", function(data) {
+    d3.csv("Data/BEBpower.csv", function(data) {
         result = data.filter(function(d){
             return d.bus=='BEB'+id;
         });

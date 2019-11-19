@@ -11,7 +11,7 @@ charg_station = [{'id':1,'StationName':'OTTC','x':100,'y':210},{'id':2,'StationN
 
 function station_bus(){
 
-    d3.csv("../Data/BusStationTime.csv", function(data) {
+    d3.csv("Data/BusStationTime.csv", function(data) {
         bus_data_row = data;
         col_data = data['columns'];
         for (i=0; i<col_data.length;i++){
@@ -30,7 +30,7 @@ function station_bus(){
 function time_select(){
 
 
-    d3.csv("../Data/ActiveLoad.csv", function(data) {
+    d3.csv("Data/ActiveLoad.csv", function(data) {
         result = data.filter(function(d){
             return d.nodes=='n1';
         });
@@ -304,7 +304,7 @@ document.getElementById("s_veloctiy").addEventListener("click", function(){
     console.log(bus_id);
     let e = document.getElementById("time");
     let time_line = (parseInt(e.options[e.selectedIndex].value)+1).toString();
-    d3.csv("../Data/BusV.csv", function(data) {
+    d3.csv("Data/BusV.csv", function(data) {
         let busData = data.filter(function(d){return d.BusID==bus_id});
         console.log(busData)
         let time_value = busData.filter(function(d){

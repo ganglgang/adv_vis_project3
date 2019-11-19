@@ -204,7 +204,7 @@ function table_plot(){
 function chargingStation(station){
     document.getElementById("charging").style.display = "block";
 
-    d3.csv("../Data/chargingStation.csv", function(data) {
+    d3.csv("Data/chargingStation.csv", function(data) {
         result = data.filter(function(d){
             return d.station==station;
         });
@@ -311,7 +311,7 @@ function activePowerFlow(data){
     var node2 = data['target'].id;
     var flow_name = "Power flow from "+ node1 + " to "+node2+" (in kW)"
 
-    d3.csv("../Data/ActivePowerFlow.csv", function(data){
+    d3.csv("Data/ActivePowerFlow.csv", function(data){
         result = data.filter(function(d){
             return d.From==node1 && d.To==node2;
         });
@@ -417,7 +417,7 @@ function Current(data){
     var node2 = data['target'].id;
     var flow_name = "The Current flow "+ node1 + " to "+node2+" in (A)"
 
-    d3.csv("../Data/Current.csv", function(data){
+    d3.csv("Data/Current.csv", function(data){
         result = data.filter(function(d){
             return d.From==node1 && d.To==node2;
         });

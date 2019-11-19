@@ -77,7 +77,7 @@ d3.json("graph.json", function(error, graph) {
 
 
     nodes_current = [];
-    d3.csv("../Data/MaximumLineCurrent.csv", function(data){
+    d3.csv("Data/MaximumLineCurrent.csv", function(data){
 
         for (i = 0; i < data.length;i++){
             nodes_current.push(data[i])
